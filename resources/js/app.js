@@ -15,8 +15,8 @@ $(document).ready(function(){
 
     function giveSuppository() {
         if (abbottImages.length !== 0) {
-            imageData = randomItem(abbottImages);
-            quoteData = randomItem(abbottQuotes);
+            var imageData = randomItem(abbottImages);
+            var quoteData = randomItem(abbottQuotes);
 
             $('#abbottImage').css({
                 "background-image": "url(" + imageData.image + ")",
