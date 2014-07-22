@@ -40,8 +40,8 @@ $(document).ready(function(){
         url: "data.json",
         dataType: 'json',
         success: function( data, status, xhr ) {
-            abbottImages = data.abbott_images;
-            abbottQuotes = data.abbott_quotes;
+            abbottImages = data.abbottImages;
+            abbottQuotes = data.abbottQuotes;
             giveSuppository();
         },
         error: function( xhr, errorType, error ) {

@@ -1,5 +1,5 @@
 {
-    "abbott_images": [
+    "abbottImages": [
         {
             "image":        "resources/images/abbott1.jpg",
             "position":     "0 0"
@@ -45,7 +45,7 @@
             "position":     "-60px 0"
         }
     ],
-    "abbott_quotes": [
+    "abbottQuotes": [
         {
             "text":         "No one. However smart, however well-educated, however experienced is the suppository of all wisdom",
             "reference":    "http://edition.cnn.com/2013/08/12/world/asia/australia-abbott-suppository-gaffe/"
