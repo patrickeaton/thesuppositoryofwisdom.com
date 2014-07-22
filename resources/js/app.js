@@ -23,12 +23,14 @@ $(document).ready(function(){
                 "background-position": imageData.position
             });
 
-            $("#abottQuote").empty().text(quoteData.text).append($("<br>"), $("<br>"),
+            $("#abottQuote").empty().text(quoteData.text).append($("<br>"),
+                $("<br>"),
                 $("<a>").attr({
                     "href":     quoteData.reference,
                     "target":   "blank",
                     "class":    "refer"
-                }).text("Reference"));
+                }).text("Reference")
+            );
         }
     }
 
