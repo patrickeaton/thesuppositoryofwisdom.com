@@ -1,0 +1,182 @@
+{
+    "abbottImages": [
+        {
+            "image":        "resources/images/abbott1.jpg",
+            "position":     "0 0"
+        },
+        {
+            "image":        "resources/images/abbott2.jpg",
+            "position":     "-75px 0"
+        },
+        {
+            "image":        "resources/images/abbott3.jpg",
+            "position":     "-100px 0"
+        },
+        {
+            "image":        "resources/images/abbott4.jpg",
+            "position":     "-100px 0"
+        },
+        {
+            "image":        "resources/images/abbott5.jpg",
+            "position":     "0 0"
+        },
+        {
+            "image":        "resources/images/abbott6.jpg",
+            "position":     "-70px 0"
+        },
+        {
+            "image":        "resources/images/abbott7.jpg",
+            "position":     "-10px 0"
+        },
+        {
+            "image":        "resources/images/abbott8.gif",
+            "position":     "-20px 0"
+        },
+        {
+            "image":        "resources/images/abbott9.jpg",
+            "position":     "-90px 0"
+        },
+        {
+            "image":        "resources/images/abbott10.jpg",
+            "position":     "-35px 0"
+        },
+        {
+            "image":        "resources/images/abbott11.jpg",
+            "position":     "-60px 0"
+        }
+    ],
+    "abbottQuotes": [
+        {
+            "text":         "No one. However smart, however well-educated, however experienced is the suppository of all wisdom",
+            "reference":    "http://edition.cnn.com/2013/08/12/world/asia/australia-abbott-suppository-gaffe/"
+        },
+        {
+            "text":         "I think that they'civilisation came to this country in 1788 and are perfectly appropriate remarks for the Canadian Prime Minister to make. Canadia ... Canada probably has more involvement in the affairs of Europe than Australia often does",
+            "reference":    "http://news.ninemsn.com.au/world/2014/06/09/14/09/tony-abbott-calls-canada-canadia-during-tour#lCKgL1Q93hl0WQ3j.99"
+        },
+        {
+            "text":         "If you wanna know who to vote for, I'm the guy with the not bad-looking daughters.",
+            "reference":    "https://www.youtube.com/watch?v=OmyoRNL0hrQ"
+        },
+        {
+            "text":         "It's not goodies versus baddies, it's baddies versus baddies",
+            "reference":    "http://www.abc.net.au/news/2013-09-02/abbott-seeks-to-explain-baddies-v-baddies-comment/4929118'"
+        },
+        {
+            "text":         "I think it would be folly to expect that women will ever dominate or even approach equal representation in a large number of areas simply because their aptitudes, abilities and interests are different for physiological reasons.",
+            "reference":    "http://www.abc.net.au/4corners/content/2010/s2846485.htm"
+        },
+        {
+            "text":         "I am, as you know, hugely unconvinced by the so-called settled science on climate change.",
+            "reference":    "http://www.abc.net.au/7.30/content/2009/s2638036.htm"
+        },
+        {
+            "text":         "If we're honest, most of us would accept that a bad boss is a little bit like a bad father or a bad husband. you find that he tends to do more good than harm. He might be a bad boss but at least he's employing someone while he is in fact a boss.",
+            "reference":    "http://www.abc.net.au/am/stories/s596135.htm"
+        },
+        {
+            "text":         "Abortion is the easy way out. It's hardly surprising that people should choose the most convenient exit from awkward situations.",
+            "reference":    "http://www.tonyabbott.com.au/LatestNews/ArticleswrittenbyTony/tabid/87/articleType/ArticleView/articleId/3653/RATE-OF-ABORTION-HIGHLIGHTS-OUR-MORAL-FAILINGS.aspx"
+        },
+        {
+            "text":         "The problem with the Australian practice of abortion is that an objectively grave matter has been reduced to a question of the mother's convenience.",
+            "reference":    "http://www.tonyabbott.com.au/LatestNews/ArticleswrittenbyTony/tabid/87/articleType/ArticleView/articleId/3653/RATE-OF-ABORTION-HIGHLIGHTS-OUR-MORAL-FAILINGS.aspx"
+        },
+        {
+            "text":         "I want to make it clear that I do not judge or condemn any woman who has had an abortion, but every abortion is a tragedy and up to 100,000 abortions a year is this generation's legacy of unutterable shame.",
+            "reference":    ""
+        },
+        {
+            "text":         "I won't be rushing out to get my daughters vaccinated [for cervical cancer], maybe that's because I'm a cruel, callow, callous, heartless bastard but, look, I won't be",
+            "reference":    "http://www.theaustralian.com.au/news/nation/i-could-be-seen-as-cruel-on-gardasil-abbott/story-e6frg6nf-1111112494271"
+        },
+        {
+            "text":         "I think there does need to be give and take on both sides, and this idea that sex is kind of a woman's right to absolutely withhold, just as the idea that sex is a man's right to demand I think they are both they both need to be moderated, so to speak.",
+            "reference":    "http://www.abc.net.au/tv/qanda/txt/s2514401.htm"
+        },
+        {
+            "text":         "When you are challenging the young, they can come back at you with language of tremendous power and they are no respecters of sacred cows, you know, the young. There's nothing politically correct about the average young Australian when it comes to use of language.",
+            "reference":    "http://www.news.com.au/story/0,27574,25992545-421,00.html"
+        },
+        {
+            "text":         "The argument [behind climate change] is absolute crap. However, the politics of this are tough for us. Eighty per cent of people believe climate change is a real and present danger.",
+            "reference":    "http://www.theaustralian.com.au/politics/the-town-that-turned-up-the-temperature/story-e6frgczf-1225809567009"
+        },
+        {
+            "text":         "What the housewives of Australia need to understand as they do the ironing is that if they get it done commercially it's going to go up in price and their own power bills when they switch the iron on are going to go up.",
+            "reference":    "http://www.smh.com.au/national/abbott-accused-of-being-incredibly-oldfashioned-as-he-lets-off-steam-20100209-nnqr.html"
+        },
+        {
+            "text":         "There may not be a great job for [aboriginal people] but whatever there is, they just have to do it... And if it's picking up rubbish around the community, it just has to be done.",
+            "reference":    "http://www.news.com.au/features/federal-election/aboriginal-people-must-get-jobs-says-opposition-leader-tony-abbott/story-fn5tas5k-1225886350430"
+        },
+        {
+            "text":         "Jesus knew that there was a place for everything and it's not necessarily everyone's place to come to Australia.",
+            "reference":    "http://www.abc.net.au/tv/qanda/txt/s2859473.htm"
+        },
+        {
+            "text":         "I know politicians are going to be judged on everything they say but sometimes in the heat of discussion you go a little bit further than you would if it was an absolutely calm, considered, prepared, scripted remark. The statements that need to be taken absolutely as gospel truth are those carefully prepared scripted remarks.",
+            "reference":    "http://www.news.com.au/national/dont-believe-everything-i-say-tony-abbott/story-e6frfkvr-1225867979082"
+        },
+        {
+            "text":         "It seems that, notwithstanding the dramatic increases in manmade CO2 emissions over the last decade, the world's warming has stopped.",
+            "reference":    "http://www.heraldsun.com.au/news/australias-second-warmest-year-ever-according-to-bureau-of-meteorology-figures/story-e6frf7jo-1225816322149"
+        },
+        {
+            "text":         "While I think men and women are equal, they are also different and I think it's inevitable and I don't think it's a bad thing at all that we always have, say, more women doing things like physiotherapy and an enormous number of women simply doing housewor",
+            "reference":    "http://www.heraldsun.com.au/opinion/rudd-hands-pm-a-crucial-lifeline/story-e6frfhqf-1225902277655"
+        },
+        {
+            "text":         "I think I would say to my daughters if they were to ask me this question... it [their virginity] is the greatest gift that you can give someone, the ultimate gift of giving and don't give it to someone lightly, that's what I would say.",
+            "reference":    "http://www.theage.com.au/opinion/the-monk-might-make-sense-20100127-mz0v.html#ixzz249o58Ykh"
+        },
+        {
+            "text":         "The poor will always be with us.",
+            "reference":    "http://www.brisbanetimes.com.au/opinion/bible-bashing-the-homeless-abbott-style-20100215-o2tj.html?comments=105"
+        },
+        {
+            "text":         "These people aren't so much seeking asylum, they're seeking permanent residency. If they were happy with temporary protection visas, then they might be able to argue better that they were asylum seekers",
+            "reference":    "http://www.abc.net.au/7.30/content/2012/s3573785.htm"
+        },
+        {
+            "text":         "I think there does need to be give and take on both sides, and this idea that sex is kind of a woman's right to absolutely withhold, just as the idea that sex is a man's right to demand I think they are both they both need to be moderated, so to speak",
+            "reference":    "http://www.abc.net.au/tv/qanda/txt/s2514401.htm"
+        },
+        {
+            "text":         "Climate change is absolute crap",
+            "reference":    "http://www.abc.net.au/7.30/content/2010/s2808321.htm"
+        },
+        {
+            "text":         "If you want to put a price on carbon why not just do it with a simple tax",
+            "reference":    "http://www.youtube.com/watch?v=ckcH0Wrmy74"
+        },
+        {
+            "text":         "[on homosexuality] I'd probably ... I feel a bit threatened",
+            "reference":    "http://sixtyminutes.ninemsn.com.au/article.aspx?id=1020354"
+        },
+        {
+            "text":         "[on homosexuality] If you'd asked me for advice I would have said to have adopt a sort of \"don't ask, don't tell\" policy about all of these things...",
+            "reference":    "http://www.abc.net.au/tv/qanda/txt/s2514401.htm"
+        },
+        {
+            "text":         "Now, I know that there are some Aboriginal people who aren't happy with Australia Day. For them it remains Invasion Day. I think a better view is the view of Noel Pearson, who has said that Aboriginal people have much to celebrate in this country's British Heritage",
+            "reference":    "http://www.abc.net.au/tv/qanda/txt/s2859473.htm"
+        },
+        {
+            "text":         "Western civilisation came to this country in 1788 and I'm proud of that...",
+            "reference":    "http://www.abc.net.au/4corners/content/2010/s2846485.htm"
+        },
+        {
+            "text":         "[on Fiona Scott] I think I can probably say [she] has a bit of sex appeal",
+            "reference":    "http://www.abc.net.au/news/2013-08-13/tony-abbott-highlights-fellow-candidates-sex-appeal/4884346"
+        },
+        {
+            "text":         "[on teenage netballers] A bit of body contact never hurt anyone",
+            "reference":    "http://www.news.com.au/national-news/federal-election/tony-abbott-jokes-about-8216body-contact8217-with-teen-netballers/story-fnho52ip-1226706352231"
+        },
+        {
+            "text":         "Why isn't the fact that 100,000 women choose to end their pregnancies regarded as a national tragedy? Why isn't it regarded as a national tragedy approaching the scale of Aboriginal life expectancy being 20 years less than the average of the general community?",
+            "reference":    "http://www.theage.com.au/articles/2004/03/16/1079199224910.html"
+        }
+    ]
+}
