@@ -6,38 +6,47 @@ ga('create', 'UA-51936221-1', 'thesuppositoryofwisdom.com');
 ga('send', 'pageview');
 
 $(document).ready(function(){
+    var abbottImages = [];
+    var abbottQuotes = [];
+
     function randomItem(itemArray) {
         return itemArray[Math.floor(Math.random()*itemArray.length)];
     }
 
     function giveSuppository() {
-        $.ajax({
-            url: "data.json",
-            dataType: 'json',
-            success: function( data, status, xhr ) {
-                var imageData = randomItem(data.abbott_images);
-                var quoteData = randomItem(data.abbott_quotes);
-                $('#abbottImage').css({
-                    "background-image": "url(" + imageData.image + ")",
-                    "background-position": imageData.position
-                });
+        if (abbottImages.length !== 0) {
+            imageData = randomItem(abbottImages);
+            quoteData = randomItem(abbottQuotes);
 
-                $("#abottQuote").empty().text(quoteData.text).append($("<br>"), $("<br>"),
-                    $("<a>").attr({
-                        "href":     quoteData.reference,
-                        "target":   "blank",
-                        "class":    "refer"
-                    }).text("Reference"))
-            },
-            error: function( xhr, errorType, error ) {
-                throw 'Cannot load JSON data: ' + error;
-            }
-        });
+            $('#abbottImage').css({
+                "background-image": "url(" + imageData.image + ")",
+                "background-position": imageData.position
+            });
+
+            $("#abottQuote").empty().text(quoteData.text).append($("<br>"), $("<br>"),
+                $("<a>").attr({
+                    "href":     quoteData.reference,
+                    "target":   "blank",
+                    "class":    "refer"
+                }).text("Reference"));
+        }
     }
 
     $("#morewisdom").click(function(){
         giveSuppository();
     });
 
-    giveSuppository();
+    $.ajax({
+        url: "data.json",
+        dataType: 'json',
+        success: function( data, status, xhr ) {
+            abbottImages = data.abbott_images;
+            abbottQuotes = data.abbott_quotes;
+            giveSuppository();
+        },
+        error: function( xhr, errorType, error ) {
+            throw 'Cannot load JSON data: ' + error;
+        }
+    });
+
 });
