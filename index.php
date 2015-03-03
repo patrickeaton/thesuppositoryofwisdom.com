@@ -4,13 +4,22 @@
  		$image;
 
         try{
-            $conn = new PDO("mysql:host=localhost;dbname=suppository;", "user", "password");
+			
+            $conn = new PDO("mysql:host=localhost;dbname=suppository;", "root", "");
 
-            $stmt = $conn->prepare('SELECT * FROM quotes ORDER BY RAND() LIMIT 1');
+			$stmt = $conn->prepare('SELECT * FROM quotes ORDER BY RAND() LIMIT 1');
+			if(isset($_GET['qid'])){
+				$stmt = $conn->prepare('SELECT * FROM quotes WHERE ID = '.$_GET['qid']);
+			}
+            
             $stmt->execute();
             $quote  =  $stmt->fetch();
 
+			
            	$stmt = $conn->prepare('SELECT * FROM images ORDER BY RAND() LIMIT 1');
+			if(isset($_GET['iid'])){
+				$stmt = $conn->prepare('SELECT * FROM images WHERE ID = '.$_GET['iid']);
+			}
             $stmt->execute();
             $image  =  $stmt->fetch();
 
@@ -23,21 +32,67 @@
 <html>
   <head>
     <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
-    <link href='resources/style.css' rel='stylesheet' type='text/css'>
     <link rel="image_src" type="image/jpeg" href="resources/images/abbott1.jpg" />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+	<link href='resources/style.css' rel='stylesheet' type='text/css'>
     <title>Tony Abbott: The suppository of all wisdom</title>
     <link rel="shortcut icon" type="image/ico" href="resources/favicon.ico" />
     <meta property="og:image" content="http://thesuppositoryofwisdom.com/resources/images/abbott1.jpg" />  
 </head>
   <body>
+  <div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
     <div class='main'>
       <div class= 'image' style="background-image: url(<?php echo $image['HREF'] ?>); background-position:<?php echo $image['POSITION'] ?>;"> </div>
       <div class='quotemark'>"</div>
-      <div class='quote'><?php echo $quote['QUOTE']; ?> <br/><br/><a href='<?php echo $quote['REF']; ?>' target='blank' class='refer'>Reference</a></div>
+	  <div class='quote'><?php echo $quote['QUOTE']; ?> <br/><br/>
+		  <a href='<?php echo $quote['REF']; ?>' target='blank' class='refer'>Reference</a>&nbsp;
+		  <a href='http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']."&iid=".$image['ID']; ?>' target='blank' class='refer'>Direct Link</a>&nbsp;
+		  <div class="fb-share-button" data-href="http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']; ?>" data-layout="button_count"></div> 
+	  </div>
       <div class='quotemark'>"</div>
-      <a href='' class='button'>More Wisdom</a>
+      <a href='http://thesuppositoryofwisdom.com' class='button'>More Wisdom</a>
+	  <div style="text-align:center;margin-left: 275px;width: 200px;color:#ffffff">
+	        <br/>
+			<p>or</p>
+			<a href="#myModal" role="button" data-toggle="modal" class="add_new">Submit New Wisdom</a>
+			<!-- Modal -->
+		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3 id="myModalLabel">Modal header</h3>
+		  </div>
+		  <div class="modal-body">
+			<p>One fine body…</p>
+		  </div>
+		  <div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		  </div>
+		</div>
+	  </div>
+	  
     </div>
-    <footer>Built as part of <a href='http://fifty2project.com'>fifty2</a></footer>
+    <footer>
+		<form style="display:inline;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+			<input type="image" style="width:55px;margin-bottom:-3px;" src="https://www.paypalobjects.com/en_AU/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal — The safer, easier way to pay online.">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_AU/i/scr/pixel.gif" width="1" height="1">
+		</form>
+		<div class="fb-like" data-href="https://www.facebook.com/thesuppositoryofwisdom" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+</footer>
   </body>
 
 <script>

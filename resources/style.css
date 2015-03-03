@@ -15,9 +15,6 @@
 		margin-right: 35px;
 		margin-top:30px;
 	}
-	div{
-		
-	}
 	.quote{
 		width:400px;
 		font-size: 24px;
@@ -80,22 +77,36 @@
 	background: -ms-linear-gradient(top,#e3aa00 0%,#ffc20e 100%);
 	background: linear-gradient(to bottom,#e3aa00 0%,#ffc20e 100%);
 }
+
+a:hover{
+	color:#ffffff;
+}
+
+a:active{
+	color:#ffffff;
+}
+
+.add_new{
+	color:#ffffff;
+	font-size:13px;
+	text-decoration:underline;
+}
+
 .refer{
 	color:#C3C4A3;
 	font-size: 10px;
 	text-align:right;
 }
 footer {
-            background-color: #333;
-            width: 100%;
-            bottom: 0;
-            position: absolute;
-            color:#FFFFFF;
-            text-align: center;
-            padding-bottom: 5px;
-        }
-        footer a{
+	background-color: #333;
+	width: 100%;
+	bottom: 0;
+	position: absolute;
+	color:#FFFFFF;
+	text-align: center;
+	padding: 5px;
+}
+footer a{
 			color:#006fb9;
-
-        }
+}
 	
