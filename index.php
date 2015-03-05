@@ -7,14 +7,13 @@
 			
             $conn = new PDO("mysql:host=localhost;dbname=suppository;", "root", "");
 
-			$stmt = $conn->prepare('SELECT * FROM quotes ORDER BY RAND() LIMIT 1');
+			$stmt = $conn->prepare('SELECT * FROM quotes WHERE approved = "y" ORDER BY RAND() LIMIT 1');
 			if(isset($_GET['qid'])){
 				$stmt = $conn->prepare('SELECT * FROM quotes WHERE ID = '.$_GET['qid']);
 			}
             
             $stmt->execute();
             $quote  =  $stmt->fetch();
-
 			
            	$stmt = $conn->prepare('SELECT * FROM images ORDER BY RAND() LIMIT 1');
 			if(isset($_GET['iid'])){
@@ -34,10 +33,13 @@
     <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
     <link rel="image_src" type="image/jpeg" href="resources/images/abbott1.jpg" />
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" ></script>
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+	<script src="resources/jquery.prettySocial.js"></script>
 	
 	<link href='resources/style.css' rel='stylesheet' type='text/css'>
     <title>Tony Abbott: The suppository of all wisdom</title>
@@ -53,37 +55,77 @@
 	  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
 	  fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));</script>
+	<script type="text/javascript">
+$(document).ready(function(){
+    $("#add_form").submit(function(event) {
+        event.preventDefault();
+        var formData = $("#add_form").serialize();
+		console.log(formData);
+		
+		if($("#quote").val() !== "" && $("#reference").val() !== ""){
+			$.ajax({
+				type: "POST",
+				url: "submit.php",
+				data: formData,
+				success: function(data) {
+					$('#myModal').modal('hide');
+					$("#quote").val("");
+					$("#reference").val("");
+				}
+			});
+		}else{
+			alert("Please make sure all fields are completed");
+		}
+    });
+});
+</script>
     <div class='main'>
       <div class= 'image' style="background-image: url(<?php echo $image['HREF'] ?>); background-position:<?php echo $image['POSITION'] ?>;"> </div>
       <div class='quotemark'>"</div>
 	  <div class='quote'><?php echo $quote['QUOTE']; ?> <br/><br/>
+	  <div class="links">
+			<a href="#" data-type="twitter" data-url="http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']."&iid=".$image['ID']; ?>" data-via = "TonyAbbottMHR" data-description="<?php echo $quote['QUOTE']; ?>" class="prettySocial fa fa-twitter"></a>
+			<a href="#" data-type="facebook" data-url="http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']."&iid=".$image['ID']; ?>" data-title="The Suppository of Wisdom" data-description="<?php echo $quote['QUOTE']; ?>" data-media="http://thesuppositoryofwisdom.com/resources/images/abbott1.jpg" class="prettySocial fa fa-facebook"></a>
+			<a href="#" data-type="googleplus" data-url="http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']."&iid=".$image['ID']; ?>" data-description="<?php echo $quote['QUOTE']; ?>" class="prettySocial fa fa-google-plus"></a>
+		</div>
 		  <a href='<?php echo $quote['REF']; ?>' target='blank' class='refer'>Reference</a>&nbsp;
 		  <a href='http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']."&iid=".$image['ID']; ?>' target='blank' class='refer'>Direct Link</a>&nbsp;
-		  <div class="fb-share-button" data-href="http://thesuppositoryofwisdom.com?<?php echo "qid=".$quote['ID']; ?>" data-layout="button_count"></div> 
+		  <div class="social-container">
+		
+		<script type="text/javascript" class="source">
+			$('.prettySocial').prettySocial();
+		</script>
+	</div>
 	  </div>
       <div class='quotemark'>"</div>
       <a href='http://thesuppositoryofwisdom.com' class='button'>More Wisdom</a>
 	  <div style="text-align:center;margin-left: 275px;width: 200px;color:#ffffff">
 	        <br/>
 			<p>or</p>
-			<a href="#myModal" role="button" data-toggle="modal" class="add_new">Submit New Wisdom</a>
-			<!-- Modal -->
-		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3 id="myModalLabel">Modal header</h3>
-		  </div>
-		  <div class="modal-body">
-			<p>One fine body…</p>
-		  </div>
-		  <div class="modal-footer">
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-			<button class="btn btn-primary">Save changes</button>
-		  </div>
-		</div>
-	  </div>
-	  
+			<a href="#myModal" role="button" data-toggle="modal" class="add_new">Submit New Wisdom</a>	  
     </div>
+	</div>
+	<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1"role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog"  style="width:400px" >
+    <form class="modal-content" id="add_form">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Quote</h4>
+      </div>
+      <div class="modal-body">
+        <textarea placeholder="Quote" class="form-control" name="quote" id="quote" style="height:200px;"></textarea>
+		<input type="text" placeholder="Reference" class="form-control" id="reference" name="reference" style="margin-top:20px;">
+		<br/>
+		<p><b>Note:</b> All quotes must be approved before they will appear, to be approved they must be accurate and have a reference.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button class="btn btn-primary" type="submit">Save changes</button>
+      </div>
+    </form>
+  </div>
+</div>
     <footer>
 		<form style="display:inline;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 			<input type="hidden" name="cmd" value="_s-xclick">

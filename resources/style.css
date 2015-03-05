@@ -24,6 +24,7 @@
 		padding-top: 50px;
 		float:left;
 		min-height: 200px;
+		margin-bottom: 20px;
 	}
 
 	.quotemark{
@@ -65,6 +66,7 @@
 		text-align:center;
 		margin-top:30px;
 		margin-left: 275px;
+		display: block;
 	}
 
 .button:hover {
@@ -80,10 +82,15 @@
 
 a:hover{
 	color:#ffffff;
+	text-decoration:none;
 }
 
 a:active{
-	color:#ffffff;
+	text-decoration:none;
+}
+
+a:focus{
+	text-decoration:none;
 }
 
 .add_new{
@@ -108,5 +115,25 @@ footer {
 }
 footer a{
 			color:#006fb9;
+}
+.links a{
+  color:#cccccc;
+  opacity:60%;
+  font-size:20px;
+}
+
+.links .fa-twitter:hover{
+	color:#4099FF;
+  text-decoration:none;
+}
+
+.links .fa-facebook:hover{
+	color:#3b5998;
+  text-decoration:none;
+}
+
+.links .fa-google-plus:hover{
+	color:#d34836;
+  text-decoration:none;
 }
 	
